@@ -1,0 +1,182 @@
+$red: #FF7A7A;
+$green: #37CC8A;
+$text: #68676D;
+
+@mixin flex($j, $w) {
+    display: flex;
+    align-items: center;
+    justify-content: $j;
+    flex-wrap: $w;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+*{
+    padding: 0; margin: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    text-transform: capitalize;
+    
+
+    .container{
+        min-height: 100vh;
+        background-color: $red;
+        background-image: url(bg-intro-desktop.png);
+        @include flex(center, nowrap);
+
+            .texts{
+                width: 50%;
+                margin-left: 15%;
+                margin-right: 4rem;
+    
+                h1{
+                    font-size: 5rem;
+                    line-height: 6rem;
+                    font-weight: 700;
+                    color: #fff;
+                    padding: 4rem 0;
+                }
+
+                p{
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    font-weight: 400;
+                    color: #fff;
+                    margin-right: 2.5rem;
+                }
+            }
+
+            .forms{
+                width: 50%;
+                margin-right: 15%;
+
+                .banner{
+                    width: 100%;
+                    background-color: #5D54A3;
+                    color: #fff;
+                    font-size: 1.6rem;
+                    padding: 2rem 0;
+                    border-radius: 1rem;
+                    text-align: center;
+                    box-shadow: 0 .7rem 0 rgba($color: #000000, $alpha: .1);
+                    margin-bottom: 2.5rem;
+
+                    span{
+                        font-weight: 600;
+                    }
+                }
+
+                form{
+                    width: 100%;
+                    background-color: #fff;
+                    border-radius: 1rem;
+                    box-shadow: 0 .7rem 0 rgba($color: #000000, $alpha: .1);
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    padding: 4rem 0;
+                    position: relative;
+
+                    img{
+                        position: absolute;
+                        left: 80%;
+                    }
+
+                    input{
+                        width: 85%;
+                        border: .1rem solid rgba($color: #5D54A3, $alpha: .25);
+                        padding: 1rem 3.6rem 1rem 1rem;
+                        margin: .5rem 0;
+                        font-weight: 500;
+                        border-radius: .5rem;
+
+                        &.error{
+                            background-image: url(icon-error.svg);
+                            background-repeat: no-repeat;
+                            background-position: 97% 50%;
+                            border: .2rem solid rgba($color: $red, $alpha: 1);
+                        }
+
+                        &:focus{
+                            outline: 1px solid $text;
+                        }
+
+                    }
+
+                    .btn{
+                        width: 85%;
+                        padding: 1rem 3.6rem 1rem 1rem;
+                        margin: 1rem 0;
+                        font-weight: 500;
+                        cursor: pointer;
+                        background-color: $green;
+                        color: #fff;
+                        font-weight: 700;
+                        box-shadow: 0 .7rem rgba($color: #34B87E, $alpha: .1);
+                        border-radius: 1rem;
+
+                        &:hover{
+                            background-color: rgba($color: $green, $alpha: .7);
+                        }
+                    }
+                    p{
+                        &.terms{
+                            font-size: 1.3rem;
+                            color: rgba($color: $text, $alpha: .5);
+                            text-align: center;
+                            span{
+                                color: $red;
+                                font-weight: 700;
+                            }
+                        }
+
+                        &.f-error, &.l-error, &.e-error, &.p-error{
+                            font-size: 1.2rem;
+                            color: $red;
+                            font-style: italic;
+                            font-weight: 600;
+                            margin: .3rem 0;
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+    }
+}
+
+@media (max-width: 768px) {
+    html{
+        font-size: 55%;
+    }
+
+    .container{
+        flex-direction: column;
+        text-align: center;
+
+        .texts{
+            width: 80%;
+            margin: 0 5%;
+
+            p{
+                margin-bottom: 2rem;
+            }
+        }
+
+        .forms{
+            width: 70%;
+            margin: 0 auto 4rem;
+        }
+    }
+}
+
+@media (max-width: 430px){
+    html{
+        font-size: 45%;
+    }
+}
