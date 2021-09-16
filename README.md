@@ -34,8 +34,8 @@ Active State: http://prnt.sc/1seslpb
 
 ### Links
 
-- Solution URL: [Add solution URL here](Later)
-- Live Site URL: [Add live site URL here](Later)
+- Solution URL: [Solution URL](https://github.com/urmihayath/signup-challenge)
+- Live Site URL: [Live Demo](https://urmihayath.github.io/signup-challenge/)
 
 ## My process
 
